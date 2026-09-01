@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>LOOP Banking</title>
+  <link rel="manifest" href="manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="phone-shell">
+      <main id="screen"></main>
+      <nav id="bottom-nav"></nav>
+
+      <!-- PIN entry overlay -->
+      <div id="pinOverlay" class="overlay hidden">
+        <div id="pinSheet" class="pin-sheet">
+          <div class="sheet-handle"></div>
+          <button class="sheet-close" id="pinClose" aria-label="Close">&times;</button>
+          <div class="pin-title">Enter your PIN</div>
+          <div class="pin-sub" id="pinSub">Confirm your transfer</div>
+          <div class="pin-boxes" id="pinBoxes">
+            <span class="pin-box"></span>
+            <span class="pin-box"></span>
+            <span class="pin-box"></span>
+            <span class="pin-box"></span>
+          </div>
+          <div class="pin-error" id="pinError">Incorrect PIN, try again</div>
+          <input id="pinNativeInput" class="pin-native-input" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Transaction status overlay -->
+      <div id="txOverlay" class="overlay hidden">
+        <div id="txSheet" class="tx-sheet">
+          <div class="sheet-handle"></div>
+          <div id="txContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
